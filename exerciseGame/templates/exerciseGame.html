@@ -26,7 +26,7 @@
 
       <div class="logicGame_title">
         <div class="main_title">
-          <a href="/" class="home_btn"><i class="fa-solid fa-arrow-left"></i></a>
+          <a href="../" class="home_btn"><i class="fa-solid fa-arrow-left"></i></a>
           <div class="title_img">
             <i class="fa-solid fa-brain"></i>
           </div>
@@ -50,37 +50,40 @@
         <div class="mySlides fade">
           <a class="game1" href="{% url 'cube3D' %}">
             <div class="game_number">
-              <img src="../static/img/puzzle.png" class="game_img">
+              <img src="../static/img/cube.png" class="game_img">
               <div class="game_title">3D 큐브 자르기</div>
-              <div class="game_ex">명화로 퍼즐 맞추고 감상도 하고!</div>
-            </div>
-          </a>
-          <a class="game2" href="{% url 'tangram' %}">
-            <div class="game_number">
-              <img src="../static/img/figure.png" class="game_img">
-              <div class="game_title">칠교 놀이</div>
-              <div class="game_ex">7가지 조각만 사용하기</div>
+              <div class="game_ex">날아오는 큐브를 잘라보자</div>
             </div>
           </a>
 
-          <a class="game3" href="{% url 'drawing' %}">
+          <a class="game4" href="{% url 'piano' %}">
             <div class="game_number">
-              <img src="../static/img/cryptocurrency-art.png" class="game_img">
-              <div class="game_title">그림 그리기</div>
-              <div class="game_ex">자유롭게 드로잉을 해보자</div>
-            </div>
-          </a>
-
-          <a class="game4" href="{% url 'pianoplay' %}">
-            <div class="game_number">
-              <img src="../static/img/piano.png" class="game_img">
-              <div class="game_title">피아노 치기</div>
-              <div class="game_ex">도레미파솔라시~</div>
+              <img src="../static/img/piano_t.png" class="game_img">
+              <div class="game_title">피아노 타일</div>
+              <div class="game_ex">노래에 맞춰 타일 클릭!</div>
               <!-- <img src="../static/img/gym2.png" alt=""> -->
             </div>
           </a>
+
+          <a class="game4" href="{% url 'block' %}">
+            <div class="game_number">
+              <img src="../static/img/block.png" class="game_img">
+              <div class="game_title">블럭 쌓기</div>
+              <div class="game_ex">조금만 기다려주세요~</div>
+            </div>
+          </a>
+
+          <a class="game4" href="{% url 'ball_breaker' %}">
+              <div class="game_number">
+                <img style="width: 250px !important; left: 10px !important" src="../static/img/ball2.png" class="game_img">
+                <div class="game_title">블럭 깨기</div>
+                <div class="game_ex">조금만 기다려주세요~</div>
+              </div>
+            </a>
+
+      
         </div>
-        <div class="mySlides fade">
+        <!-- <div class="mySlides fade">
           <a class="game1" href="helpingDataTip4/">
             <div class="game_number">
               <img class="game_img" src="../static/images/bad.png" alt="">
@@ -94,10 +97,10 @@
               <div class="game_title">치매 예방에 좋은 습관</div>
               <div class="game_ex">치매와 멀어지는 습관
               </div>
-              <!-- <img src="../static/img/gym4.png" alt=""> -->
+              <img src="../static/img/gym4.png" alt=""> -->
             </div>
           </a>
-        </div>
+        </div> 
     </div>
 
     <script>
