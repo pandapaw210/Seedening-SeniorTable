@@ -1,0 +1,84 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+	{% load static %}
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="{% static 'piano-style.css' %}" />
+	<title>피아노 타일</title>
+	<script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+		  <style type="text/css" media="screen, print">
+				  @font-face {
+				  font-family: 'GongGothicMedium';
+				  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+				  font-weight: normal;
+				  font-style: normal;
+				  }
+				  body { font-family: "GongGothicMedium", serif }
+		  </style>
+
+
+	
+</head>
+
+<body>
+	{% load static %}
+
+	<div class="header" style="background-color: #39BF94; position:absolute; z-index: 3; width:100%; padding: 20px 60px; margin-top: -80px;
+    color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+      <div class="header-title" style="width: 100%;display: flex; align-items: center;">
+        <a class="back_btn" style="width: 50px;
+        height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
+        font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="main_title" style="font-size: 40px;
+        font-family: 'GongGothicMedium'; margin-bottom: 10px;">피아노 타일</div>
+      </div>
+
+      <a class="home_btn" style= "width: 100px;
+      height: 100px;
+      font-size: 40px;
+      text-align: center;
+      line-height: 115px;
+      color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+    </div>
+
+
+
+	<div class="top">
+		<div class="title">
+		  <div class="head_title">피아노 타일</div>
+
+		  <div class="sub_title">노래에 맞춰 내려오는 타일을<br>클릭해보세요~</div>
+		</div>
+		<a class="back_btn" href="/"><i class="fa-solid fa-house"></i></a>
+	  </div>
+
+	<div class="container">
+		<div class="gameOver">
+			<p>게임 끝</p>
+			<!-- Use js  to display block -->
+			<p>점수 <span id="total-score">0</span></p>
+			<p>최고 점수 <span id="best-score">0</span></p>
+			<button id="restart">다시 시작하기</button>
+		</div>
+		<div class="score">
+			<p>점수 <span id="current-score">0</span></p>
+			<p>최고 점수 <span id="high-score">0</span></p>
+		</div>
+		<div class="canvas"></div>
+	</div>
+	<audio id="start-button-music" src="{% static 'sounds/start_button.mp3' %}" hidden></audio>
+	<audio id="play-music" src="{% static 'sounds/play.m4a' %}" hidden></audio>
+	<audio id="result-music" src="{% static 'sounds/gameOver.wav' %}" hidden></audio>
+	<script type="module" src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+{% endblock %}
