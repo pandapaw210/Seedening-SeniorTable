@@ -1,0 +1,139 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시드닝 터치테이블</title>
+  <link rel="stylesheet" href="{% static 'main-style.css' %}">
+  <link rel="stylesheet" href="{% static 'main-reset.css' %}">
+  <link rel="stylesheet" href="{% static 'books.css' %}">
+
+
+  <!-- 폰트어썸 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- 폰트 -->
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'usp4skz',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+</head>
+
+
+
+<body>
+  {% load static %}
+  <div class="logicGame" style="overflow: auto;">
+
+    <div class="logicGame_title">
+      <div class="main_title">
+        <a href="/" class="home_btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="title_img">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <div class="title_text">
+          <div class="title_text_head">도서 추천</div>
+          <div class="title_text_sub">치매 예방 책이 궁금하다면?</div>
+        </div>
+      </div>
+
+      <div class="sub_title">
+        마음 챙기미
+      </div>
+    </div>
+
+    <div class="slide_btn">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <!-- <a class="game1" href="books/"> -->
+          <div class="game_number">
+            {% for books in books %}
+                    <div class="table">
+                            <div class="book_number">{{ books.pk }}</div>
+                            <div class="book">
+                              <div class="book_title">{{ books.title }}</div>
+                              <div class="book_sub">{{ books.author }}</div>
+                            </div>
+                            <div class="book_content">{{ books.content }}</div>                
+                    </div>
+                    {% endfor %}
+          </div>
+        </a>
+
+        
+          </div>
+        </a>
+      </div>
+      <div class="mySlides fade">
+        <a class="game1" href="helpingDataTip4/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/bad.png" alt="">
+            <div class="game_title">치매에 안 좋은 습관</div>
+            <div class="game_ex">치매로 가는 지름길 습관</div>
+          </div>
+        </a>
+        <a class="game2" href="helpingDataTip5/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/good.png" alt="">
+            <div class="game_title">치매 예방에 좋은 습관</div>
+            <div class="game_ex">치매와 멀어지는 습관
+            </div>
+            <!-- <img src="../static/img/gym4.png" alt=""> -->
+          </div>
+        </a>
+      </div>
+
+      
+      
+      </div>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+
+</body>
+
+{% endblock %}
+

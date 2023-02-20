@@ -1,0 +1,141 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시드닝 터치테이블</title>
+  <link rel="stylesheet" href="{% static 'main-style.css' %}">
+  <link rel="stylesheet" href="{% static 'main-reset.css' %}">
+  <link rel="stylesheet" href="../static/helpingData-style.css">
+
+
+  <!-- 폰트어썸 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</head>
+
+
+
+<body>
+  {% load static %}
+  <div class="logicGame">
+
+    <div class="logicGame_title">
+      <div class="main_title">
+        <a href="/" class="home_btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="title_img">
+          <i class="fa-solid fa-person-walking"></i>
+        </div>
+        <div class="title_text">
+          <div class="title_text_head">건강 정보</div>
+          <div class="title_text_sub">정확하고 올바르게 알자!</div>
+        </div>
+      </div>
+
+      <div class="sub_title">
+        건강 챙기미
+      </div>
+    </div>
+
+    <div class="slide_btn">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <a class="game1" href="books/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/books-pile.png" alt="">
+            <div class="game_title">치매 추천 도서</div>
+            <div class="game_ex">가볍게 볼 수 있는 책 추천!</div>
+          </div>
+        </a>
+        <a class="game2" href="helpingDataTip1/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/heath.png" alt="">
+            <div class="game_title">치매 예방 농식품</div>
+            <div class="game_ex">어떤 음식이 치매 예방에 좋을까?
+            </div>
+          </div>
+        </a>
+        <a class="game3" href="helpingDataTip2/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/shocked-mind.png" alt="">
+            <div class="game_title">생활 속 치매 징후</div>
+            <div class="game_ex">이런 행동을 보인다면 혹시...?
+            </div>
+          </div>
+        </a>
+        <a class="game4" href="helpingDataTip3/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/rule.png" alt="">
+            <div class="game_title">치매 예방 333 수칙</div>
+            <div class="game_ex">3가지 수칙만 따라 지켜보자</div>
+            <!-- <img src="../static/img/gym2.png" alt=""> -->
+          </div>
+        </a>
+      </div>
+      <div class="mySlides fade">
+        <a class="game1" href="helpingDataTip4/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/bad.png" alt="">
+            <div class="game_title">치매에 안 좋은 습관</div>
+            <div class="game_ex">치매로 가는 지름길 습관</div>
+          </div>
+        </a>
+        <a class="game2" href="helpingDataTip5/">
+          <div class="game_number">
+            <img class="game_img" src="../static/images/good.png" alt="">
+            <div class="game_title">치매 예방에 좋은 습관</div>
+            <div class="game_ex">치매와 멀어지는 습관
+            </div>
+            <!-- <img src="../static/img/gym4.png" alt=""> -->
+          </div>
+        </a>
+      </div>
+
+      
+      
+      </div>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+
+       
+</body>
+
+{% endblock %}
