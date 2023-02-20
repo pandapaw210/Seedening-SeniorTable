@@ -1,0 +1,240 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시드닝 터치테이블</title>
+  <link rel="stylesheet" href="{% static 'main-style.css' %}">
+  <link rel="stylesheet" href="{% static 'main-reset.css' %}">
+  <!-- 폰트어썸 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <!-- 폰트 -->
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'usp4skz',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+</head>
+
+<body>
+  {% load static %}
+    <div class="container">
+        <!-- 타이틀 -->
+        <div class="title">
+          <div class="head">전체 보기</div>
+          <div class="sub">시드닝 인지 테이블</div>
+        </div>
+        <div class="content">
+          <div class="content1">
+            <div class="content_title">
+              두뇌 트레이닝 게임
+              <hr>
+            </div>
+            <div class="content_game_box">
+              <!-- 논리게임 -->
+              <a href="{% url 'logicGame' %}">
+                <div class="content_game">
+                  <div class="content_img">
+                    <i class="fa-solid fa-brain"></i>
+                  </div>
+                  <div class="content_text">
+                    <div class="content_text_head">논리 게임</div>
+                    <div class="content_text_sub">잠든 두뇌를 깨우자</div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- 창작게임 -->
+              <a class="game2" href="{% url 'creativeGame' %}">
+                <div class="content_game">
+                  <div class="content_img">
+                    <i class="fa-solid fa-palette"></i>
+                  </div>
+                  <div class="content_text">
+                    <div class="content_text_head">창작 게임</div>
+                    <div class="content_text_sub">숨은 창의력을 찾자</div>
+                  </div>
+                </div>
+              </a>
+              
+              <!-- 예방게임 -->
+              <a class="game3" href="{% url 'exerciseGame' %}">
+                <div class="content_game">
+                  <div class="content_img">
+                    <i class="fa-solid fa-shield-halved"></i>                  
+                  </div>
+                  <div class="content_text">
+                    <div class="content_text_head">예방 게임</div>
+                    <div class="content_text_sub">즐겁게 뇌를 자극하자</div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- 재활게임 -->
+              <a class="game4" href="{% url 'preventGame' %}">
+                <div class="content_game">
+                  <div class="content_img">
+                    <i class="fa-solid fa-stethoscope"></i>
+                  </div>
+                  <div class="content_text">
+                    <div class="content_text_head">재활 게임</div>
+                    <div class="content_text_sub">재빠른 손놀림으로!</div>
+                  </div>
+                </div>
+              </a>
+              
+            </div>
+          </div>
+          <div class="content1">
+            <div class="content_title">
+              마음 챙기미
+              <hr>
+            </div>
+            
+            <div class="content_game_box">
+
+              <!-- 사랑의 메시지 -->
+              <a href="{% url 'loveMessage' %}">
+              <div class="content_game">
+                <div class="content_img">
+                  <i class="fa-regular fa-comments"></i>
+                </div>
+                <div class="content_text">
+                  <div class="content_text_head">사랑의 메시지</div>
+                  <div class="content_text_sub">선한 메시지를 담아 전송!</div>
+                </div>
+              </div>
+              </a>
+
+              <!-- 풍경 앨범 -->
+              <a href="{% url 'worldAlbum' %}">
+              <div class="content_game">
+                <div class="content_img">
+                  <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <div class="content_text">
+                  <div class="content_text_head">앉아서 세계 속으로</div>
+                  <div class="content_text_sub">아름다운 경관을 감상하자</div>
+                </div>
+              </div>
+              </a>
+
+              <!-- 문학 감상 -->
+               <a href="{% url 'books' %}">
+              <div class="content_game">
+                <div class="content_img">
+                  <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="content_text">
+                  <div class="content_text_head">문학 감상</div>
+                  <div class="content_text_sub">문학으로 '나' 들여다보기</div>
+                </div>
+              </div>
+              </a>
+              
+            </div>
+
+          </div>
+          <div class="content1">
+            <div class="content_title">
+              건강 챙기미
+              <hr>
+            </div>
+            
+            <div class="content_game_box">
+
+              <!-- 건강 체조 -->
+              <a href="{% url 'gymnastic' %}">
+              <div class="content_game">
+                <div class="content_img">
+                  <i class="fa-solid fa-person-walking"></i>
+                </div>
+                <div class="content_text">
+                  <div class="content_text_head">건강 체조</div>
+                  <div class="content_text_sub">잠든 두뇌를 깨우자</div>
+                </div>
+              </div>
+              </a>
+
+
+              <!-- 건강 정보 -->
+              <a href="{% url 'helpingData' %}">
+              <div class="content_game">
+                <div class="content_img">
+                  <i class="fa-solid fa-laptop-medical"></i>
+                </div>
+                <div class="content_text">
+                  <div class="content_text_head">건강 정보</div>
+                  <div class="content_text_sub">정확하고 올바르게 알자!</div>
+                </div>
+              </div>
+              </a>
+
+              <!-- 자가치매 진단 -->
+              <a href="{% url 'diagnosis' %}">
+              <div class="content_game">
+                <div class="content_img">
+                  <i class="fa-solid fa-hospital-user"></i>
+                </div>
+                <div class="content_text">
+                  <div class="content_text_head">자가 치매 진단</div>
+                  <div class="content_text_sub">내 건강은 내가 챙긴다</div>
+                </div>
+              </div>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+        <!-- <div class="games_back">
+          <div class="games">
+            <a class="game1" href="{% url 'logicGame' %}">
+              <div class="game_number">첫번째</div>
+            </a>
+            <a class="game2" href="{% url 'creativeGame' %}">
+              <div class="game_number">두번째</div>
+            </a>
+            <a class="game3" href="{% url 'exerciseGame' %}">
+              <div class="game_number">세번째</div>
+            </a>
+            <a class="game4" href="{% url 'preventGame' %}">
+              <div class="game_number">네번째</div>
+            </a>
+            <a class="game5" href="{% url 'gymnastic' %}">
+              <div class="game_number">다섯번째</div>
+            </a>
+            <a class="game6" href="{% url 'helpingData' %}">
+              <div class="game_number">여섯번째</div>
+            </a>
+            <a class="game7" href="{% url 'literature' %}">
+              <div class="game_number">일곱번째</div>
+            </a>
+            <a class="game8" href="{% url 'diagnosis' %}">
+              <div class="game_number">여덟번째</div>
+            </a>
+            <a class="game9" href="{% url 'loveMessage' %}">
+              <div class="game_number">아홉번째</div>
+            </a>
+            <a class="game10" href="{% url 'worldAlbum' %}">
+              <div class="game_number">열번째</div>
+            </a>
+        </div>
+        </div> -->
+    </div>
+</body>
+
+{% endblock %}
