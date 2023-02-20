@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>칠교 놀이</title>
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+  <!-- css -->
+   <!--jQuery UI south-street theme(green)-->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css">
+
+   <!--custom style-->
+   <link rel="stylesheet" href="{% static 'tangram.css' %}">
+
+
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+        <style type="text/css" media="screen, print">
+                @font-face {
+                font-family: 'GongGothicMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                }
+                body { font-family: "GongGothicMedium", serif }
+        </style> 
+
+</head>
+
+<body>
+  {% load static %}
+<!-- partial:index.partial.html -->
+  <div class="header" style="background-color: #39BF94; position:absolute; z-index: 3; width:100%; padding: 20px 60px; 
+  color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black; margin-top: -960px; margin-left: -10px;" >
+
+    <div class="header-title" style="width: 100%; display: flex; align-items: center;">
+      <a class="back_btn" style="width: 50px;
+      height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff; margin-left: 100px;
+      font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+      <div class="main_title" style="font-size: 40px;
+      font-family: 'GongGothicMedium'; margin-bottom: 10px;">칠교 놀이</div>
+    </div>
+
+    <a class="home_btn" style= "width: 100px;
+    height: 100px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 115px;
+    color: white;
+    margin-right: 100px;
+    " href="/"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+
+    <p style="padding-top: 120px;">
+        조각들을 끌어 모양을 만들어보세요
+    </p>
+    <p>
+        두번 눌러 조각을 회전시킬 수 있습니다
+    </p>
+
+    <div class="container" style=>
+        <div class="canvas t-l-1">
+        </div>
+        <div class="canvas t-l-2">
+        </div>
+        <div class="canvas t-s-1">
+        </div>
+        <div class="canvas s">
+        </div>
+        <div class="canvas t-s-2">
+        </div>
+        <div class="canvas p">
+        </div>
+        <div class="canvas t-m">
+        </div>
+    </div>
+
+    <script>
+    /*!
+    * displacejs.js 1.2.4 - Tiny javascript library to create moveable DOM elements.
+    * Copyright (c) 2017 Catalin Covic - https://github.com/catc/displace
+    * License: MIT
+    */
+    !function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.displacejs=e():t.displacejs=e()}(this,function(){return function(t){function e(n){if(o[n])return o[n].exports;var s=o[n]={exports:{},id:n,loaded:!1};return t[n].call(s.exports,s,s.exports,e),s.loaded=!0,s.exports}var o={};return e.m=t,e.c=o,e.p="",e(0)}([function(t,e,o){"use strict";function n(t){return t&&t.__esModule?t:{"default":t}}var s=o(1),u=n(s);t.exports=u["default"]},function(t,e,o){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function s(){var t=this.el,e=this.opts||r,o={};if(t.style.position="absolute",this.handle=e.handle||t,e.constrain){for(var n=e.relativeTo||t.parentNode,s=t,a=0,c=0;s!==n;)s=s.parentNode,(0,u.isRelative)(s)&&(a-=s.offsetLeft,c-=s.offsetTop),s===n&&(a+=s.offsetLeft,c+=s.offsetTop);var h=a+n.offsetWidth-t.offsetWidth,f=c+n.offsetHeight-t.offsetHeight;o.xClamp=(0,u.generateClamp)(a,h),o.yClamp=(0,u.generateClamp)(c,f)}this.opts=e,this.data=o,this.events={mousedown:i.mousedown.bind(this),mouseup:i.mouseup.bind(this),touchstart:i.touchstart.bind(this),touchstop:i.touchstop.bind(this)},this.handle.addEventListener("mousedown",this.events.mousedown,!1),this.handle.addEventListener("touchstart",this.events.touchstart,!1)}Object.defineProperty(e,"__esModule",{value:!0});var u=o(2),i=o(3),r={constrain:!1,relativeTo:null,handle:null,highlightInputs:!1,onMouseDown:null,onMouseMove:null,onMouseUp:null,onTouchStart:null,onTouchMove:null,onTouchStop:null},a=function(){function t(e,o){if(n(this,t),!e)throw Error("Must include moveable element");this.el=e,this.opts=o,s.call(this)}return t.prototype.reinit=function(){this.destroy(),s.call(this)},t.prototype.destroy=function(){var t=this.events;this.handle.removeEventListener("mousedown",t.mousedown,!1),document.removeEventListener("mousemove",t.mousemove,!1),document.removeEventListener("mouseup",t.mouseup,!1),this.handle.removeEventListener("touchstart",t.touchstart,!1),document.removeEventListener("touchmove",t.touchmove,!1),document.removeEventListener("touchstop",t.touchstop,!1)},t}();e["default"]=function(t,e){return new a(t,e)}},function(t,e){"use strict";function o(t,e){return function(o){return Math.min(Math.max(o,t),e)}}function n(){return window.requestAnimationFrame?function(t,e,o){window.requestAnimationFrame(function(){t.style.left=e+"px",t.style.top=o+"px"})}:function(t,e,o){t.style.left=e+"px",t.style.top=o+"px"}}function s(t){return"relative"===window.getComputedStyle(t).position}Object.defineProperty(e,"__esModule",{value:!0}),e.generateClamp=o,e.generateMoveFn=n,e.isRelative=s},function(t,e,o){"use strict";function n(t){var e=this.opts;if(e.highlightInputs){var o=t.target.tagName.toLowerCase();if("input"===o||"textarea"===o)return}var n=this.el,u=this.events;"function"==typeof e.onMouseDown&&e.onMouseDown(n,t);var i=t.clientX-n.offsetLeft,r=t.clientY-n.offsetTop;u.mousemove=s.bind(this,i,r),document.addEventListener("mousemove",u.mousemove,!1),document.addEventListener("mouseup",u.mouseup,!1)}function s(t,e,o){var n=this.el,s=this.opts,u=this.data;"function"==typeof s.onMouseMove&&s.onMouseMove(n,o);var i=o.clientX-t,r=o.clientY-e;return s.constrain&&(i=u.xClamp(i),r=u.yClamp(r)),h(n,i,r),o.preventDefault(),!1}function u(t){var e=this.el,o=this.opts,n=this.events;"function"==typeof o.onMouseUp&&o.onMouseUp(e,t),document.removeEventListener("mouseup",n.mouseup,!1),document.removeEventListener("mousemove",n.mousemove,!1)}function i(t){var e=this.opts;if(e.highlightInputs){var o=t.target.tagName.toLowerCase();if("input"===o||"textarea"===o)return}var n=this.el,s=this.events;"function"==typeof e.onTouchStart&&e.onTouchStart(n,t);var u=t.targetTouches[0],i=u.clientX-n.offsetLeft,a=u.clientY-n.offsetTop;s.touchmove=r.bind(this,i,a),document.addEventListener("touchmove",s.touchmove,!1),document.addEventListener("touchend",s.touchstop,!1),document.addEventListener("touchcancel",s.touchstop,!1)}function r(t,e,o){var n=this.el,s=this.opts,u=this.data;"function"==typeof s.onTouchMove&&s.onTouchMove(n,o);var i=o.targetTouches[0],r=i.clientX-t,a=i.clientY-e;return s.constrain&&(r=u.xClamp(r),a=u.yClamp(a)),h(n,r,a),o.preventDefault(),!1}function a(t){var e=this.el,o=this.opts,n=this.events;"function"==typeof o.onTouchStop&&o.onTouchStop(e,t),document.removeEventListener("touchmove",n.touchmove,!1),document.removeEventListener("touchend",n.touchstop,!1),document.removeEventListener("touchcancel",n.touchstop,!1)}Object.defineProperty(e,"__esModule",{value:!0}),e.mousedown=n,e.mousemove=s,e.mouseup=u,e.touchstart=i,e.touchmove=r,e.touchstop=a;var c=o(2),h=(0,c.generateMoveFn)()}])});
+    </script>
+    
+
+    <script>
+        const body = document.body;
+        const container = document.querySelector(".container");
+        const pl = document.querySelector(".canvas.p");
+        const tl1 = document.querySelector(".canvas.t-l-1");
+        const tl2 = document.querySelector(".canvas.t-l-2");
+        const ts1 = document.querySelector(".canvas.t-s-1");
+        const ts2 = document.querySelector(".canvas.t-s-2");
+        const sq = document.querySelector(".canvas.s");
+        const tm = document.querySelector(".canvas.t-m");
+
+        // degree state closure
+        const rotationIncrementor = function () {
+        let rotation = 0;
+
+        function updateRotation() {
+            rotation = rotation + 45 < 360 ? rotation + 45 : 0;
+        }
+
+        return {
+            rotate: function () {
+            updateRotation();
+            },
+            getDegree: function () {
+            return rotation;
+            } };
+
+        };
+
+        // initialise state for each shape
+        let plRotator = rotationIncrementor();
+        let tl1Rotator = rotationIncrementor();
+        let tl2Rotator = rotationIncrementor();
+        let ts1Rotator = rotationIncrementor();
+        let ts2Rotator = rotationIncrementor();
+        let sqRotator = rotationIncrementor();
+        let tmRotator = rotationIncrementor();
+
+        // click on shape makes rotation
+        pl.ondblclick = function () {
+        plRotator.rotate();
+        pl.style.transform = `rotate(${plRotator.getDegree()}deg)`;
+        };
+        tl1.ondblclick = function () {
+        tl1Rotator.rotate();
+        tl1.style.transform = `rotate(${tl1Rotator.getDegree()}deg)`;
+        };
+        tl2.ondblclick = function () {
+        tl2Rotator.rotate();
+        tl2.style.transform = `rotate(${tl2Rotator.getDegree()}deg)`;
+        };
+        ts1.ondblclick = function () {
+        ts1Rotator.rotate();
+        ts1.style.transform = `rotate(${ts1Rotator.getDegree()}deg)`;
+        };
+        ts2.ondblclick = function () {
+        ts2Rotator.rotate();
+        ts2.style.transform = `rotate(${ts2Rotator.getDegree()}deg)`;
+        };
+        tl1.ondblclick = function () {
+        tl1Rotator.rotate();
+        tl1.style.transform = `rotate(${tl1Rotator.getDegree()}deg)`;
+        };
+        sq.ondblclick = function () {
+        sqRotator.rotate();
+        sq.style.transform = `rotate(${sqRotator.getDegree()}deg)`;
+        };
+        tm.ondblclick = function () {
+        tmRotator.rotate();
+        tm.style.transform = `rotate(${tmRotator.getDegree()}deg)`;
+        };
+
+        //initialise displacejs with shapes
+        let displacejsOptions = {
+        constrain: true,
+        relativeTo: body,
+        onMouseDown: dragActive,
+        onTouchStart: dragActive,
+        onMouseUp: dragInactive,
+        onTouchStop: dragInactive };
+
+
+        function dragActive(el) {
+        el.className += ' active';
+        }
+        function dragInactive(el) {
+        el.className = el.className.replace('active', '');
+        }
+
+        window.displacejs(tl1, displacejsOptions);
+        window.displacejs(tl2, displacejsOptions);
+        window.displacejs(ts1, displacejsOptions);
+        window.displacejs(ts2, displacejsOptions);
+        window.displacejs(pl, displacejsOptions);
+        window.displacejs(sq, displacejsOptions);
+        window.displacejs(tm, displacejsOptions);
+    </script>
+
+</body>
+
+{% endblock %}
