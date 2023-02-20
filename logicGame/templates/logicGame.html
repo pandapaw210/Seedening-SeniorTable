@@ -63,15 +63,8 @@
             </div>
           </a>
 
-          <a class="game3" href="{% url 'drawing' %}">
-            <div class="game_number">
-              <img src="../static/img/sketch.png" class="game_img">
-              <div class="game_title">그림 그리기</div>
-              <div class="game_ex">자유롭게 스케치북에 표현하기</div>
-            </div>
-          </a>
-
-          <a class="game4" href="{% url 'Omok' %}">
+          
+          <a class="game3" href="{% url 'Omok' %}">
             <div class="game_number">
               <img src="../static/img/omok.png" class="game_img">
               <div class="game_title">오목 대결</div>
@@ -79,25 +72,34 @@
               <!-- <img src="../static/img/gym2.png" alt=""> -->
             </div>
           </a>
-        </div>
-        <div class="mySlides fade">
-          <a class="game1" href="helpingDataTip4/">
+
+          <a class="game4" href="{% url 'sudoku' %}">
             <div class="game_number">
-              <img class="game_img" src="../static/images/bad.png" alt="">
-              <div class="game_title">치매에 안 좋은 습관</div>
-              <div class="game_ex">치매로 가는 지름길 습관</div>
+              <img src="../static/sudoku/images/sudoku.png" class="game_img">
+              <div class="game_title">스도쿠</div>
+              <div class="game_ex">빈칸에 들어갈 알맞은 숫자는?</div>
             </div>
           </a>
-          <a class="game2" href="helpingDataTip5/">
+
+        </div>
+        <div class="mySlides fade">
+          <a class="game1" href="{% url 'square' %}">
+            <div class="game_number">
+              <img src="../static/img/square.png" class="game_img">
+              <div class="game_title">다른 네모 찾기</div>
+              <div class="game_ex">빈칸에 들어갈 알맞은 숫자는?</div>
+            </div>
+          </a>
+          <!-- <a class="game2" href="helpingDataTip5/">
             <div class="game_number">
               <img class="game_img" src="../static/images/good.png" alt="">
               <div class="game_title">치매 예방에 좋은 습관</div>
               <div class="game_ex">치매와 멀어지는 습관
               </div>
-              <!-- <img src="../static/img/gym4.png" alt=""> -->
-            </div>
-          </a>
+          </div>
+          </a> -->
         </div>
+      </div>
     </div>
 
     <script>
