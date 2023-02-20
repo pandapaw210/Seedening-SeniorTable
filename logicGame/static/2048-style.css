@@ -1,3 +1,18 @@
+@import "/main/static/main-style.css";
+@import "/main/static/main-reset.css";
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+} 
+
 /* Hosting special section */
 
 img[alt$="www.000webhost.com"] { display: none; } /* for 000webhost */
@@ -73,13 +88,13 @@ body {
 	background: var(--color2);
 }
 
-* {
-	font-family: roboto;
+/* * {
+	font-family: GongGothicMedium;
 	font-size: var(--font-size);
 	color: var(--color1);
 	transition-property: color, background;
 	transition-duration: var(--transition);
-}
+} */
 
 .container {
 	display: flex;

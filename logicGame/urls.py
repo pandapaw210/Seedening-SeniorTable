@@ -8,4 +8,7 @@ urlpatterns = [
 	path('2048/', views.game2048, name='2048'),
 	path('hanoitower/', views.hanoitower, name='hanoitower'),
 	path('Omok/', views.Omok, name='Omok'),
+	path('binairo/', views.binairo, name='binairo'),
+    path('sudoku/', views.sudoku, name='sudoku'),
+    path('square/', views.square, name='square'),
 ]

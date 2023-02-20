@@ -22,3 +22,12 @@ def hanoitower(request):
 def Omok(request):
 	return render(request, 'Omok.html', {})
 
+def binairo(request):
+	return render(request, 'binairo.html', {})
+
+def sudoku(request):
+	return render(request, 'sudoku.html', {})
+
+def square(request):
+	return render(request, 'square.html', {})
+
