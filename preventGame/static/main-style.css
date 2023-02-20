@@ -1,0 +1,181 @@
+@import "main-reset.css";
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto !important;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+}
+
+/* 타이틀 */
+.title {
+    padding-top: 80px;
+    height: 20%;
+    margin-left: 80px;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 55px;
+}
+.sub {
+    font-family: 'GongGothicMedium';
+    font-weight: 100;
+    margin-bottom: 7px;
+    margin-left: 3px;
+    font-size: 30px;
+}
+.head {
+    font-family: 'GongGothicMedium';
+    font-size: 70px;
+    font-weight: 300;
+    line-height: 80px;
+}
+
+/* 컨텐츠 */
+
+.content {
+    width: 90%;
+    /* border: 1px solid black; */
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.content1 {
+    margin-bottom: 75px;
+    height: auto;
+    /* border: 1px solid black; */
+}
+
+.background {
+    position: absolute;
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 240px;
+    top: 500px;
+    left: 0;
+    z-index: -1;
+}
+
+.content_title {
+    width: 100%;
+    height: 100%;
+    font-family: 'GongGothicMedium';
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-size: 25px;
+    opacity: 0.7;
+}
+
+.content_title::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #39BF94;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+} 
+
+.content1:nth-child(2) .content_title::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #FCC11A;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.content1:nth-child(3) .content_title::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #EF634B;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+
+.content_game_box {
+    display: flex;
+    width: 90%;
+    margin-left: 30px;
+}
+
+.content_game_box a {
+    height: auto;
+}
+
+.content_game {
+    border: 2px solid black;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 25px 25px;
+    margin-right: 45px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+.conent_img,
+.content1:nth-child(2) .conent_img, 
+.content1:nth-child(3) .conent_img {
+    width: 45px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 10px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.content1:nth-child(1) .conent_img {
+    background-color: #39BF94;
+}
+
+.content1:nth-child(2) .conent_img {
+    background-color: #FCC11A;
+}
+
+.content1:nth-child(3) .conent_img {
+    background-color: #EF634B;
+}
+
+.content_text {
+    line-height: 35px;
+
+}
+.content_text_head {
+    font-family: 'GongGothicMedium';
+    font-size: 30px;
+}
+.content_text_sub {
+    font-family: 'NanumSquare';
+    font-size: 20px;
+}
