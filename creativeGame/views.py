@@ -2,23 +2,20 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from django.shortcuts import render
-
-# Create your views here.
 
 
-def creativeGame(request):
-	return render(request, 'creativeGame.html', {})
+def exerciseGame(request):
+	return render(request, 'exerciseGame.html', {})
 
-def pixelart(request):
-	return render(request, 'pixelart.html', {})
+def cube3D(request):
+	return render(request, 'cube3D.html', {})
 
-def drawing(request):
-	return render(request, 'drawing.html', {})
+def piano(request):
+	return render(request, 'piano.html', {})
 
-def tangram(request):
-	return render(request, 'tangram.html', {})
+def block(request):
+	return render(request, 'block.html', {})
 
-def pianoplay(request):
-	return render(request, 'pianoplay.html', {})
+def ball_breaker(request):
+	return render(request, 'ball_breaker.html', {})
 
