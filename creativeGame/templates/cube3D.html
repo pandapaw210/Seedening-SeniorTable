@@ -1,0 +1,95 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+	{% load static %}
+  <meta charset="UTF-8">
+  <title>3D 박스 자르기</title>
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2c3f51">
+  <link rel="stylesheet" href="{% static 'cube3D-style.css' %}">
+
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+        <style type="text/css" media="screen, print">
+                @font-face {
+                font-family: 'GongGothicMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                }
+                body { font-family: "GongGothicMedium", serif }
+        </style>
+</head>
+
+<body>
+	{% load static %}
+
+	<div class="header" style="background-color: #39BF94; position:absolute; z-index: 3; width:100%; padding: 20px 60px;
+    color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+      <div class="header-title" style="width: 100%;display: flex; align-items: center; margin-left: -50px;">
+        <a class="back_btn" style="width: 50px;
+        height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff; margin-top: -10px;
+        font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="main_title" style="font-size: 40px;
+        font-family: 'GongGothicMedium'; margin-bottom: 10px;">3D 큐브 자르기</div>
+      </div>
+
+      <a class="home_btn" style= "width: 100px;
+      height: 100px;
+      font-size: 40px;
+      text-align: center;
+      line-height: 115px;
+      margin-right: 100px;
+      color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+    </div>
+
+<!-- partial:index.partial.html -->
+<!-- Game canvas -->
+<canvas id="c"></canvas>
+
+<!-- Gameplay HUD -->
+<div class="hud">
+	<div class="hud__score">
+		<div class="score-lbl"></div>
+		<div class="cube-count-lbl"></div>
+	</div>
+	<div class="pause-btn"><div></div></div>
+	<div class="slowmo">
+		<div class="slowmo__bar"></div>
+	</div>
+</div>
+
+<!-- Menu System -->
+<div class="menus">
+	<div class="menu menu--main">
+		<h1>3D 박스 자르기</h1>
+		<button type="button" class="play-normal-btn">게임 시작</button>
+		<button type="button" class="play-casual-btn">자유 모드</button>
+	</div>
+	<div class="menu menu--pause">
+		<h1>잠시 멈추기</h1>
+		<button type="button" class="resume-btn">재개 하기</button>
+		<button type="button" class="menu-btn--pause">메뉴로 돌아가기</button>
+	</div>
+	<div class="menu menu--score">
+		<h1>게임 끝</h1>
+		<h2>점수는:</h2>
+		<div class="final-score-lbl"></div>
+		<div class="high-score-lbl"></div>
+		<button type="button" class="play-again-btn">다시 시작하기</button>
+		<button type="button" class="menu-btn--score">메뉴로 돌아가기</button>
+	</div>
+</div>
+<!-- partial -->
+  <script type="module" src="{% static 'cube3D-script.js' %}"></script>
+
+</body>
+
+{% endblock %}
