@@ -13,3 +13,9 @@ def cube3D(request):
 def piano(request):
 	return render(request, 'piano.html', {})
 
+def block(request):
+	return render(request, 'block.html', {})
+
+def ball_breaker(request):
+	return render(request, 'ball_breaker.html', {})
+
