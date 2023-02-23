@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('qkrruaql0210')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['34.64.61.49']
+ALLOWED_HOSTS = ['*', '0.0.0.0:8000', 'localhost', '127.0.0.1', '34.64.61.49', '34.64.61.49:8000']
 
 
 # Application definition
