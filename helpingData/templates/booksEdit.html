@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+    <div>
+        <form action="" method="POST" style="max-width:1000px; margin:4rem;">
+            {% csrf_token %}
+            <div>Title</div><input type="text" id="title" name="title">
+            <div>Author</div><input type="text" id="author" name="author">
+            <div>Content</div><input type="content" id="content" name="content">
+
+            </div>
+            <button type="submit" class="btn btn-primary rounded-pill col-12">
+                POST
+            </button>
+        </form>
+    </div>
+
+
+
+    <table style="text-align:center; width:100%; border:1px solid black;">
+        <thead>
+            <tr>
+
+                <th>번호</th>
+                <th>제목</th>
+                <th>저자</th>
+                <th>내용</th>
+
+            </tr>
+        </thead>
+            {% for books in books %}
+            <tbody style="border: 1px solid black;">
+                <tr>
+                    <th>{{ books.pk }}</th>
+                    <td>{{ books.title }}</td>
+                    <td>{{ books.author }}</td>
+                    <td>{{ books.content }}</td>                
+                </tr>
+            </tbody>
+            {% endfor %}
+    </table>
+
+
+{% endblock %}
