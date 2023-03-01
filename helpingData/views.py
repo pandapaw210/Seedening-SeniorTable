@@ -37,8 +37,6 @@ def books(request):
         }
         return render(request, 'books.html', context)
 
-def booksEdit(request):
-	return render(request, 'booksEdit.html', {})
 
 def helpingDataTip1(request):
 	return render(request, 'helpingDataTip1.html', {})
@@ -54,3 +52,6 @@ def helpingDataTip4(request):
 
 def helpingDataTip5(request):
 	return render(request, 'helpingDataTip5.html', {})
+
+def helpingDataTip6(request):
+	return render(request, 'helpingDataTip6.html', {})
