@@ -35,6 +35,10 @@ body {
     background-color: #EF634B;
 }
 
+::-webkit-scrollbar {
+    display: none;
+} 
+
 .logicGame {
     display: grid;
     grid-template-rows: 3fr 0.3fr 5fr;
