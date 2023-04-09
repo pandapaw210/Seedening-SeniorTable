@@ -82,7 +82,7 @@ class FieldMessage extends FieldOperate {
 		settings.innerHTML = 
 `
 <div class="horizontal-menu">
-	<div>Size</div>
+	<div>사이즈</div>
 	<div class="horizontal-menu">
 		<input type="number" name="width" value="${this.params.width}"> ×
 		<input type="number" name="height" value="${this.params.height}">
@@ -127,7 +127,7 @@ class FieldMessage extends FieldOperate {
 		let buttons = createDivClass('horizontal-menu', 'buttons');
 
 		let saveButton = createDivClass('button');
-		saveButton.innerText = 'Save';
+		saveButton.innerText = '저장';
 		saveButton.addEventListener('click', () => {
 			let newParams = {};
 			for (let name of names) {
@@ -139,7 +139,7 @@ class FieldMessage extends FieldOperate {
 		});
 
 		let defaultsButton = createDivClass('button');
-		defaultsButton.innerText = 'Set defaults';
+		defaultsButton.innerText = '기본값으로 설정';
 		defaultsButton.addEventListener('click', () => {
 			for (let name of names) {
 				settings[name].value = defaultParams[name];
@@ -147,7 +147,7 @@ class FieldMessage extends FieldOperate {
 		});
 
 		let closeButton = createDivClass('button');
-		closeButton.innerText = 'Close';
+		closeButton.innerText = '닫기';
 		closeButton.addEventListener('click', () => this.hideMessage());
 
 		buttons.append(saveButton, defaultsButton, closeButton);

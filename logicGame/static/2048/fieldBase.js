@@ -72,10 +72,10 @@ class FieldBase {
 
 		let newGameButton = createDivClass('button');
 		newGameButton.addEventListener('click', () => this.newGame({}));
-		newGameButton.innerText = 'New game';
+		newGameButton.innerText = '새 게임하기';
 
 		this.backButton = createDivClass('button');
-		this.backButton.innerText = 'Back';
+		this.backButton.innerText = '뒤로가기';
 		this.backButton.addEventListener('click', () => {
 			if (this.backButton.classList.contains('disabled'))
 				return;
@@ -85,7 +85,7 @@ class FieldBase {
 		});
 
 		let settingsButton = createDivClass('button');
-		settingsButton.innerText = 'Settings';
+		settingsButton.innerText = '설정';
 		settingsButton.addEventListener('click', () => this.settings());
 
 		leftButtons.append(newGameButton, this.backButton);

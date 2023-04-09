@@ -29,3 +29,4 @@ document.body.addEventListener('keydown', function (event) {
 
 	field.go(direction);
 });
+
