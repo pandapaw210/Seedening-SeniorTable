@@ -32,6 +32,7 @@ img[alt$="www.000webhost.com"] { display: none; } /* for 000webhost */
 
 /* End of hosting special section */
 
+
 :root {
 	--size: 100px;
 	--radius: 5px;
@@ -99,6 +100,7 @@ body {
 .container {
 	display: flex;
 	flex-direction: column;
+	margin-left: 800px;
 }
 
 .container > * {
@@ -108,9 +110,9 @@ body {
 .button {
 	margin: 0 10px;
 	font-weight: bold;
-
 	cursor: pointer;
 	user-select: none;
+	font-size: 30px;
 }
 
 .button.disabled {
@@ -128,7 +130,7 @@ body {
 }
 
 .message .button {
-	font-size: calc(var(--font-size) * .9);
+	font-size: calc(var(--font-size));
 }
 
 .horizontal-menu {
@@ -146,6 +148,7 @@ body {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
+	font-size: 20px;
 }
 
 .settings > .horizontal-menu {
@@ -346,7 +349,6 @@ input[type=number] {
 
 
 .header {
-	height: 50px;
 	width: 100%;
 }
 
@@ -366,3 +368,34 @@ input[type=number] {
 	opacity: 1;
 	transition: 1s;
   }
+
+/* 방향키 */
+.controls-container .controls{
+    
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  text-align: center;
+  margin-top: 5%;
+  font-size: 2rem;    
+  width: 90%;
+}
+
+.controls div{
+  margin-bottom: 5%;
+}
+
+
+.controls .up:hover, #left:hover, #right:hover, .down:hover{
+  cursor: pointer;
+  font-weight: 600;
+}    
+
+.controls .up:hover, #left:hover, #right:hover, .down:hover i{
+  color: green;
+}
+.controls .horizontal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

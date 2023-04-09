@@ -43,9 +43,9 @@ function initActions() {
         let validater = new Validate(board.board, boardSize)
         let isValid = validater.runTests();
         if (isValid) {
-            alert("You've Solved this. Awesome!!!")
+            alert("해결하셨습니다!!")
         } else {
-            alert("That's not correct. Keep trying.")
+            alert("정답이 아닙니다😢 다시 한 번 도전해보세요!")
         }
     }
 

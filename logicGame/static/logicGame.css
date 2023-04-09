@@ -1,23 +1,53 @@
-@import "/main/static/main-style.css";
-@import "/main/static/main-reset.css";
-@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import "main-reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Merriweather+Sans:ital,wght@1,300&family=Noto+Sans+KR&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Merriweather+Sans:ital,wght@1,300&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Noto+Sans+KR&display=swap%27');
 
-@font-face {
-    font-family: 'GongGothicMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1800px;
+  position: relative;
+  margin-bottom: -20px;
+  margin-left: 50px;  
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 body {
     background-color: #39BF94;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+   display: none;
 }
 
 .logicGame {
     display: grid;
     grid-template-rows: 3fr 0.3fr 5fr;
+    grid-template-columns: 1fr;
     height: 100%;
-    width: 100%;
+    width: 90%;
+    padding: 0 100px;
+    overflow: hidden;
 }
 
 /* 타이틀 */
@@ -26,7 +56,7 @@ body {
     align-items: center;
     justify-content: space-between;
     color: #fff;
-    padding: 0 120px 0 100px;
+    width: 100%;
 }
 
 .main_title {
@@ -39,7 +69,6 @@ body {
     height: 50px;
     display: block;
     font-size: 30px;
-    margin-right: 20px;
     line-height: 50px;
     color: #fff;
     font-family: 'Font Awesome 5 Free';
@@ -81,11 +110,13 @@ body {
 .slide_btn {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    padding: 0 100px;
     display: flex;
+    width: 100%;
     justify-content: end;
+    margin-bottom: 120px;
 }
-.slide_btn span {
+
+.prev, .next {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -96,40 +127,44 @@ body {
     line-height: 50px;
     text-align: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    float: right;
 }
 
-.slide_btn span:first-child {
+.slide_btn a:first-child {
     margin-right: 30px;
 }
 
 
-/* 게임 */
-.games {
-    padding: 0 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 500px;
-    position: relative;
+/* 슬라이드 */
 
+.mySlides {
+    display: none;
+    /* border: 1px solid black; */
 }
 
-.games a {
-    display: block;
-    height: 400px;
-    width: 320px;
+.mySlides a {
+    display: inline-block;
+    margin-right: 150px;
+    height: 340px;
+    width: 300px;
     /* border: 2px solid black; */
     border-radius: 25px;
     background-color: #F5F4F3;
-    padding: 25px;
+    padding: 40px 20px;
     box-sizing: border-box;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    margin-bottom: 60px;
+}
+
+.mySlides a:nth-child(4) {
+    margin-right: 0;
 }
 
 .game_img {
-    top: 75px;
+    top: -180px;
+    left: 35px;
     position: absolute;
-    width: 160px;
+    width: 190px;
     height: 160px;
     z-index: 3;
     animation: gameimg 1.4s infinite ease-in-out alternate;
@@ -147,12 +182,31 @@ body {
 
 .game_title {
     font-family: 'GongGothicMedium';
-    font-size: 30px;
-    margin-top: 180px;
+    font-size: 28px;
     margin-bottom: 15px;
+    margin-top: 180px;
 }
+
+.game_title::first-letter {
+    font-size: 33px;
+}
+
 .game_ex {
     font-family: 'NanumSquare';
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 25px;
 }
+
+.game_number {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+/* .game_number > img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: -15px;
+    right: -15px;
+} */

@@ -1,5 +1,4 @@
 ﻿body {
-    background: #d5d5d5;
     font-family: Tahoma, Verdana, sans-serif;
     margin: 0;
 }
@@ -9,9 +8,10 @@
 
 #container {
     margin-top: 50px;
-    margin-left:200px;
+    margin-left:550px;
     width: 1040px;
     height: 800px;
+    margin-bottom: 30px;
 }
 
 #left {
@@ -19,15 +19,19 @@
     height: 500px;
     margin-left: 5px;
     position:absolute;
-    left:200px;
-    border: 3px solid orange;
+    left:550px;
+    top: 400px;
+    border: 3px solid #333;
+    border-right: none;
+    background-color: beige;
 }
 #right {
     width: 500px;
     height: 500px;
     position:absolute;
-    left:705px;
-    border: 3px solid orange;
+    left:1055px;
+    top: 400px;
+    border: 3px solid #333;
 }
 
 .cube {
@@ -36,5 +40,5 @@
     height: 40px;
     border: 4px solid black;
     position: absolute;
-    background: blue;
+    background: #39BF94;
 }
