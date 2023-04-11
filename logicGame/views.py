@@ -13,11 +13,11 @@ def memoryGame(request):
 def puzzle(request):
 	return render(request, 'puzzle.html', {})
 
-def 2048(request):
+def game2048(request):
 	return render(request, '2048.html', {})
 
-def hanoi(request):
-	return render(request, 'hanoi.html', {})
+def hanoitower(request):
+	return render(request, 'hanoitower.html', {})
 
 def Omok(request):
 	return render(request, 'Omok.html', {})
@@ -36,4 +36,7 @@ def dots(request):
 
 def freecell(request):
 	return render(request, 'freecell.html', {})
+
+def hanoi(request):
+	return render(request, 'hanoi.html', {})
 
