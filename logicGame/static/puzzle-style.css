@@ -1,0 +1,161 @@
+@import url("puzzle-reset.css");
+
+
+
+
+:root {
+  --color:lightgray;
+  --border-radius:10px;
+  --image:url('https://mdl.artvee.com/sftb/511886ld.jpg');
+}
+
+body {
+  background:#FFFCF4;
+  margin: 0;
+}
+
+/* top */
+.top {
+  margin: 60px 60px;
+  display: flex;
+  justify-content: space-between;
+  height: 125px;
+  width: auto;
+}
+
+.head_title {
+  font-size: 60px;
+  font-family: 'Gugi', cursive;
+}
+
+.head_title::first-letter{
+  content: '';
+  color: #C0D4F5;
+  font-size: 65px;
+}
+
+.sub_title {
+  font-size: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 10px;
+
+}
+.back_btn {
+  display: block;
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
+  text-align: center;
+  line-height: 90px;
+  color: black;
+  opacity: 0.5;
+}
+
+.back_btn:hover {
+  opacity: 1;
+  transition: 1s;
+}
+
+/* 퍼즐 */
+#puz, #puzz {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-110%,-50%);
+  width:450px;
+  height:450px;
+  border-radius:var(--border-radius);
+  border:3px solid rgb(0, 0, 0);  
+  user-select:none;
+  overflow:hidden;
+  margin-top: 50px;
+}
+
+#puz {
+  background-color: #fff;
+}
+
+#puzz {
+  width:500px;
+  height:500px;
+  transform:translate(15%,-50%);
+  border:0;
+}
+
+#puz i {
+  float:left;
+  width:150px;
+  height:150px;  
+  outline:1px dashed lightgray;  
+}
+
+#puzz i {
+  float:left;
+  width:150px;
+  height:150px;
+  background:var(--color);
+  background-image:var(--image);
+  background-size:450px 450px;
+  cursor:move;
+  margin:8px;
+  outline:2px solid rgb(0, 0, 0);  
+}
+.first {
+  border-top-left-radius:var(--border-radius);
+  background-position-x: 0px !important;
+  background-position-y: 0px !important;
+}
+.secon {
+  background-position-x: -150px !important;
+  background-position-y: 0px !important;
+}
+.third {
+  border-top-right-radius:var(--border-radius);
+  background-position-x: -300px !important;
+  background-position-y: 0px !important;
+}
+.fourt {
+  background-position-x: 0px !important;
+  background-position-y: -150px !important;
+}
+.fifth {
+  background-position-x: -150px !important;
+  background-position-y: -150px !important;
+}
+.sixth {  
+  background-position-x: -300px !important;
+  background-position-y: -150px !important;
+}
+.seven {
+  border-bottom-left-radius:var(--border-radius);
+  background-position:left bottom !important;
+}
+.eight {
+  background-position:center bottom !important;
+}
+.ninth {
+  border-bottom-right-radius:var(--border-radius);
+  background-position:right bottom !important;
+}
+
+.dropped {
+  background:var(--color);
+  background-image:var(--image);
+  background-size:450px 450px;
+}
+.done {
+  opacity:0;
+  pointer-events:none;
+}
+
+.allDone {
+  animation:allDone 1s linear forwards;
+  border:3px solid lightgray !important;
+}
+.allDone i {
+  outline:0 !important;
+}
+
+@keyframes allDone {
+  50% { transform:translate(-110%,-50%) scale(1.2); }
+}
