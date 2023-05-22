@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<head>
+    {% load static %}
+    <title>슈팅 게임</title>
 
-	<head>
-		{% load static %}
-	<title>블럭 깨기</title>
-	<link rel="stylesheet" href="{% static 'ball_breaker.css' %}">
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'shooting.css' %}">
 
-	<!-- 폰트어썸 -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    
+    </style>
+    <!-- 폰트어썸 -->
 	<script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
 	<!-- 폰트 -->
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -21,18 +25,18 @@
 				}
 				body { font-family: "GongGothicMedium", serif }
 	</style>
-	</head>
+    
+</head>
 
 <body>
-	{% load static %}
-	<div class="header" style="background-color: #39BF94;z-index: 3; width:100%; padding: 20px 60px; 
+    <div class="header" style="background-color: #39BF94;z-index: 3; width:100%; padding: 20px 60px; 
         color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
         <div class="header-title" style="width: 100%;display: flex; align-items: center;">
             <a class="back_btn" style="width: 50px;
             height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
             font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
             <div class="main_title" style="font-size: 40px;
-            font-family: 'GongGothicMedium'; margin-bottom: 10px;">블럭 깨기</div>
+            font-family: 'GongGothicMedium'; margin-bottom: 10px;">슈팅 게임</div>
         </div>
 
         <a class="home_btn" style= "width: 100px;
@@ -43,37 +47,24 @@
         margin-right: 100px;
         color: white;" href="/"><i class="fa-solid fa-house"></i></a>
     </div>
+    <div class="fixed text-white text-sm ml-2 mt-1 select-none"><span>Score: </span><span id="scoreEl"></span>0</div>
+    <div id="modalEl" class="fixed inset-0 flex items-center justify-center">
+        <div class="bg-white max-w-md w-full p-6 text-center">
+            <h1 id="bigScoreEl" class="text-4xl font-bold leading-none">0</h1>
+            <p class="text-sm text-gray-700 mb-4">Points</p>
+            <div>
+                <button id="startgameBtn" class="bg-blue-500 text-white w-full py-3 rounded-full text-sm">Start Shooting</button>
+            </div>
+        </div>
+    </div>
+    <canvas>
 
-	<div class="ball_breaker">
-		<div id="bottom"></div>
-	<div id="game" >
-	<span id="gs">Game Speed</span><br/>
-	<input type="radio" class="speed" name="s" id="s" value="Slow" checked> <label for="s" class="lbl" id="ls">Slow</label><br/>
+    </canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+        crossorigin="anonymous"></script>
 
-	<input type="radio" class="speed" name="s" id="f" value="Fast"> <label for="f" class="lbl"  id="lf">Fast</label><br/>
-
-	<input type="radio" class="speed" name="s" id="vf" value="Very Fast"><label for="vf" class="lbl"  id="lvf">Very Fast</label> <br/>
-	<span id="pattern">Select Pattern</span><br/>
-	<select id="select_tag"> 
-
-	</select>
-	<span id="btn1" onClick="btn()">시작하기</span>
-
-	<span id="score"></span>
-	<h1 id="score" style="font-weight:bold;position:fixed;top:440px;left:470px;"></h1></div>
-	<div id="multiplier">레벨 1</div>
-	<div id="score1">점수 0</div>
-	<canvas id="canvas">
-	</canvas>
-	<img id="image" src="/static/img/ball.png" ></img>
-	<img id="bar" src="/static/img/bar.png" ></img>
-	<!-- 이미지 경로 해결해야함 -->
-	</div>
-
-	<script src="{% static 'jquery.js' %}"></script>
-	<script src="{% static 'ball_breaker.js' %}" type="text/javascript"></script>
-	sc
+    <script src="{% static 'shooting.js' %}"></script>
 </body>
-</html>
 
 {% endblock %}

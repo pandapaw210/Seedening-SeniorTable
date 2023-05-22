@@ -19,3 +19,18 @@ def block(request):
 def ball_breaker(request):
 	return render(request, 'ball_breaker.html', {})
 
+def pong(request):
+	return render(request, 'pong.html', {})
+
+def shooting(request):
+	return render(request, 'shooting.html', {})
+
+def jump(request):
+	return render(request, 'jump.html', {})
+
+def memorize(request):
+	return render(request, 'memorize.html', {})
+
+def car(request):
+	return render(request, 'car.html', {})
+
