@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>2048</title>
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="{% static '2048-style.css' %}">
+
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+        <style type="text/css" media="screen, print">
+                @font-face {
+                font-family: 'GongGothicMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                }
+                body { font-family: "GongGothicMedium", serif }
+        </style>
+</head>
+
+<body>
+  {% load static %}
+  <body>
+    <div class="header" style="background-color: #39BF94; position:absolute; z-index: 3; width:100%; padding: 20px 60px; margin-top: -800px;
+    color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+      <div class="header-title" style="width: 100%;display: flex; align-items: center;">
+        <a class="back_btn" style="width: 50px;
+        height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
+        font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="main_title" style="font-size: 40px;
+        font-family: 'GongGothicMedium'; margin-bottom: 10px;">2048</div>
+      </div>
+
+      <a class="home_btn" style= "width: 100px;
+      height: 100px;
+      font-size: 40px;
+      text-align: center;
+      line-height: 115px;
+      color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+</div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+    <script src="{% static '2048/common.js' %}"></script>
+    <script src="{% static '2048/fieldBase.js' %} "></script>
+    <script src="{% static '2048/fieldOperate.js' %} "></script>
+    <script src="{% static '2048/fieldMessage.js' %} "></script>
+    <script src="{% static '2048/field.js' %} "></script>
+    <script src="{% static '2048/2048.js' %}"></script>
+  </body>
+
+</body>
+
+{% endblock %}
