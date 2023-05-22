@@ -11,4 +11,5 @@ urlpatterns = [
 	path('binairo/', views.binairo, name='binairo'),
     path('sudoku/', views.sudoku, name='sudoku'),
     path('square/', views.square, name='square'),
+	path('dots/', views.dots, name='dots'),
 ]
