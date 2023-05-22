@@ -31,3 +31,5 @@ def sudoku(request):
 def square(request):
 	return render(request, 'square.html', {})
 
+def dots(request):
+	return render(request, 'dots.html', {})
