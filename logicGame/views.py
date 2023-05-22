@@ -32,6 +32,5 @@ def square(request):
 	return render(request, 'square.html', {})
 
 
-def hanoi(request):
-	return render(request, 'hanoi.html', {})
+
 
