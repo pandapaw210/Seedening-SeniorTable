@@ -9,6 +9,8 @@ urlpatterns = [
 	path('hanoitower/', views.hanoitower, name='hanoitower'),
 	path('Omok/', views.Omok, name='Omok'),
 	path('binairo/', views.binairo, name='binairo'),
-    path('sudoku/', views.sudoku, name='sudoku'),
-    path('square/', views.square, name='square'),
+    	path('sudoku/', views.sudoku, name='sudoku'),
+   	path('square/', views.square, name='square'),
+	
+	path('hanoi/', views.hanoi, name='hanoi'),
 ]
