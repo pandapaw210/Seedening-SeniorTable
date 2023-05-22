@@ -10,7 +10,7 @@
   max-width: 1800px;
   position: relative;
   margin-bottom: -20px;
-  margin-left: 50px;  
+  margin-left: 100px;  
 }
 
 /* Fading animation */
@@ -45,8 +45,7 @@ body {
     grid-template-rows: 3fr 0.3fr 5fr;
     grid-template-columns: 1fr;
     height: 100%;
-    width: 90%;
-    padding: 0 100px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -56,7 +55,8 @@ body {
     align-items: center;
     justify-content: space-between;
     color: #fff;
-    width: 100%;
+    width: 1330px;
+    padding: 0 50px 0 100px;
 }
 
 .main_title {
@@ -111,9 +111,10 @@ body {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     display: flex;
-    width: 100%;
+    width: 1330px;
+    padding: 0 50px 0 100px;
     justify-content: end;
-    margin-bottom: 120px;
+    margin-bottom: 70px;
 }
 
 .prev, .next {
@@ -139,12 +140,13 @@ body {
 
 .mySlides {
     display: none;
+    width: 1500px;
     /* border: 1px solid black; */
 }
 
 .mySlides a {
     display: inline-block;
-    margin-right: 150px;
+    margin-right: 40px;
     height: 340px;
     width: 300px;
     /* border: 2px solid black; */
@@ -156,7 +158,8 @@ body {
     margin-bottom: 60px;
 }
 
-.mySlides a:nth-child(4) {
+.mySlides a:nth-child(4), 
+.mySlides a:nth-child(8) {
     margin-right: 0;
 }
 
