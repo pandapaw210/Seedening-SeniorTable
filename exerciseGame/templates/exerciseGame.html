@@ -1,0 +1,138 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재활 게임</title>
+  <link rel="stylesheet" href="{% static 'main-style.css' %}">
+  <link rel="stylesheet" href="{% static 'main-reset.css' %}">
+  <link rel="stylesheet" href="{% static 'exerciseGame.css' %}">
+
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/04b098cc2d.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<body>
+  {% load static %}
+    <div class="logicGame">
+
+      <div class="logicGame_title">
+        <div class="main_title">
+          <a href="../" class="home_btn"><i class="fa-solid fa-arrow-left"></i></a>
+          <div class="title_img">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div class="title_text">
+            <div class="title_text_head">예방 게임</div>
+            <div class="title_text_sub">즐겁게 뇌를 자극하자</div>
+          </div>
+        </div>
+
+        <div class="sub_title">
+          두뇌 트레이닝
+        </div>
+      </div>
+
+      <div class="slide_btn">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <a class="game1" href="{% url 'cube3D' %}">
+            <div class="game_number">
+              <img src="../static/img/cube.png" class="game_img">
+              <div class="game_title">3D 큐브 자르기</div>
+              <div class="game_ex">날아오는 큐브를 잘라보자</div>
+            </div>
+          </a>
+
+          <a class="game4" href="{% url 'piano' %}">
+            <div class="game_number">
+              <img src="../static/img/piano_t.png" class="game_img">
+              <div class="game_title">피아노 타일</div>
+              <div class="game_ex">노래에 맞춰 타일 클릭!</div>
+              <!-- <img src="../static/img/gym2.png" alt=""> -->
+            </div>
+          </a>
+
+          <a class="game4" href="{% url 'block' %}">
+            <div class="game_number">
+              <img src="../static/img/block.png" class="game_img">
+              <div class="game_title">블럭 쌓기</div>
+              <div class="game_ex">조금만 기다려주세요~</div>
+            </div>
+          </a>
+
+          <a class="game4" href="{% url 'ball_breaker' %}">
+              <div class="game_number">
+                <img style="width: 250px !important; left: 10px !important" src="../static/img/ball2.png" class="game_img">
+                <div class="game_title">블럭 깨기</div>
+                <div class="game_ex">조금만 기다려주세요~</div>
+              </div>
+            </a>
+
+      
+        </div>
+        <!-- <div class="mySlides fade">
+          <a class="game1" href="helpingDataTip4/">
+            <div class="game_number">
+              <img class="game_img" src="../static/images/bad.png" alt="">
+              <div class="game_title">치매에 안 좋은 습관</div>
+              <div class="game_ex">치매로 가는 지름길 습관</div>
+            </div>
+          </a>
+          <a class="game2" href="helpingDataTip5/">
+            <div class="game_number">
+              <img class="game_img" src="../static/images/good.png" alt="">
+              <div class="game_title">치매 예방에 좋은 습관</div>
+              <div class="game_ex">치매와 멀어지는 습관
+              </div>
+              <img src="../static/img/gym4.png" alt=""> -->
+            </div>
+          </a>
+        </div> 
+    </div>
+
+    <script>
+      var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+    </script>
+</body>
+
+{% endblock %}
+
+

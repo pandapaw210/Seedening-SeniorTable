@@ -1,0 +1,9 @@
+@import "main-style.css";
+
+body{
+	background-color:#000;
+}
+
+#myCanvas{
+	background-color:white;
+}

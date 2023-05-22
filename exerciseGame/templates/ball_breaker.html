@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<head>
+		{% load static %}
+	<title>블럭 깨기</title>
+	<link rel="stylesheet" href="{% static 'ball_breaker.css' %}">
+
+	<!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+	<!-- 폰트 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+	<style type="text/css" media="screen, print">
+				@font-face {
+				font-family: 'GongGothicMedium';
+				src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				}
+				body { font-family: "GongGothicMedium", serif }
+	</style>
+	</head>
+
+<body>
+	{% load static %}
+	<div class="header" style="background-color: #39BF94;z-index: 3; width:100%; padding: 20px 60px; 
+        color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+        <div class="header-title" style="width: 100%;display: flex; align-items: center;">
+            <a class="back_btn" style="width: 50px;
+            height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
+            font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+            <div class="main_title" style="font-size: 40px;
+            font-family: 'GongGothicMedium'; margin-bottom: 10px;">블럭 깨기</div>
+        </div>
+
+        <a class="home_btn" style= "width: 100px;
+        height: 100px;
+        font-size: 40px;
+        text-align: center;
+        line-height: 115px;
+        margin-right: 100px;
+        color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+    </div>
+
+	<div class="ball_breaker">
+		<div id="bottom"></div>
+	<div id="game" >
+	<span id="gs">Game Speed</span><br/>
+	<input type="radio" class="speed" name="s" id="s" value="Slow" checked> <label for="s" class="lbl" id="ls">Slow</label><br/>
+
+	<input type="radio" class="speed" name="s" id="f" value="Fast"> <label for="f" class="lbl"  id="lf">Fast</label><br/>
+
+	<input type="radio" class="speed" name="s" id="vf" value="Very Fast"><label for="vf" class="lbl"  id="lvf">Very Fast</label> <br/>
+	<span id="pattern">Select Pattern</span><br/>
+	<select id="select_tag"> 
+
+	</select>
+	<span id="btn1" onClick="btn()">시작하기</span>
+
+	<span id="score"></span>
+	<h1 id="score" style="font-weight:bold;position:fixed;top:440px;left:470px;"></h1></div>
+	<div id="multiplier">레벨 1</div>
+	<div id="score1">점수 0</div>
+	<canvas id="canvas">
+	</canvas>
+	<img id="image" src="/static/img/ball.png" ></img>
+	<img id="bar" src="/static/img/bar.png" ></img>
+	<!-- 이미지 경로 해결해야함 -->
+	</div>
+
+	<script src="{% static 'jquery.js' %}"></script>
+	<script src="{% static 'ball_breaker.js' %}" type="text/javascript"></script>
+</body>
+</html>
+
+{% endblock %}
