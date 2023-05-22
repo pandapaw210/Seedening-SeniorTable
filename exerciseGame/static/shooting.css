@@ -6,3 +6,11 @@ body {
 canvas {
   background: #111;
 }
+
+::-webkit-scrollbar {
+  display: none;
+} 
+
+#startgameBtn {
+  font-size: 70px;
+}
