@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <title>슈팅 게임</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'shooting.css' %}">
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    
+    </style>
+    <!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+	<!-- 폰트 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+	<style type="text/css" media="screen, print">
+				@font-face {
+				font-family: 'GongGothicMedium';
+				src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				}
+				body { font-family: "GongGothicMedium", serif }
+	</style>
+    
+</head>
+
+<body>
+    <div class="header" style="background-color: #39BF94;z-index: 3; width:100%; padding: 20px 120px;  
+        color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+        <div class="header-title" style="width: 100%;display: flex; align-items: center;">
+            <a class="back_btn" style="width: 50px;
+            height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
+            font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+            <div class="main_title" style="font-size: 40px;
+            font-family: 'GongGothicMedium'; margin-bottom: 10px;">슈팅 게임</div>
+        </div>
+
+        <a class="home_btn" style= "width: 100px;
+        height: 100px;
+        font-size: 40px;
+        text-align: center;
+        line-height: 115px;
+        margin-right: 20px;
+        color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+    </div>
+    <div id= "score" class="fixed text-white text-sm ml-2 mt-1 select-none"><span>점수: </span><span id="scoreEl"></span>0</div>
+    <div id="modalEl" class="fixed inset-0 flex items-center justify-center">
+        <div class="bg-white max-w-md w-full p-6 text-center">
+            <h1 id="bigScoreEl" class="text-4xl font-bold leading-none">0</h1>
+            <p class="text-sm text-gray-700 mb-4">Points</p>
+            <div>
+                <button id="startgameBtn" class="bg-blue-700 text-white w-full py-3 rounded-full">슈팅 시작하기</button>
+            </div>
+        </div>
+    </div>
+    <canvas>
+
+    </canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'shooting.js' %}"></script>
+</body>
+
+{% endblock %}

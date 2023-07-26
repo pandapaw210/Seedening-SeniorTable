@@ -1,0 +1,198 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재활 게임</title>
+  <link rel="stylesheet" href="{% static 'main-style.css' %}">
+  <link rel="stylesheet" href="{% static 'main-reset.css' %}">
+  <link rel="stylesheet" href="../static/preventGame.css">
+
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/04b098cc2d.js" crossorigin="anonymous"></script>
+
+  <!-- 폰트 -->
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'usp4skz',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+  </script>
+
+</head>
+
+
+
+<body>
+  {% load static %}
+    <div class="logicGame">
+
+      <div class="logicGame_title">
+        <div class="main_title">
+          <a href="/" class="home_btn"><i class="fa-solid fa-arrow-left"></i></a>
+          <div class="title_img">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div class="title_text">
+            <div class="title_text_head">재활 게임</div>
+            <div class="title_text_sub">재빠른 손놀림으로!</div>
+          </div>
+        </div>
+
+        <div class="sub_title">
+          두뇌 트레이닝
+        </div>
+      </div>
+
+      <div class="slide_btn">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <!-- <a class="game1" href="{% url 'tetris' %}">
+            <div class="game_number">
+              <img src="../static/img/tetris.png" class="game_img">
+              <div class="game_title">테트리스</div>
+              <div class="game_ex">하늘에서 떨어지는 블록</div>
+            </div>
+          </a> -->
+          <a class="game2" href="{% url 'guess' %}">
+            <div class="game_number">
+              <img src="../static/img/guess.png" class="game_img">
+              <div class="game_title">숫자 맞추기</div>
+              <div class="game_ex">감이 이끄는 대로!</div>
+            </div>
+          </a>
+
+          
+          <a class="game3" href="{% url 'flood' %}">
+            <div class="game_number">
+              <img src="../static/img/color.png" class="game_img">
+              <div class="game_title">같은 색으로 맞춰라</div>
+              <div class="game_ex">4가지 색을 하나로 통일!</div>
+            </div>
+          </a>
+
+          <a class="game4" href="{% url 'snake' %}">
+            <div class="game_number">
+              <img src="../static/img/snake.png" class="game_img">
+              <div class="game_title">스네이크 게임</div>
+              <div class="game_ex">조금만 기다려주세요~</div>
+            </div>
+          </a>
+
+          <a class="game2" href="{% url 'ball' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/touch.png" alt="">
+              <div class="game_title">공을 터치!</div>
+              <div class="game_ex">가로세로 수정</div>
+            </div>
+          </a>
+        </div>
+        <div class="mySlides fade">
+          <a class="game1" href="{% url 'word' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/word.png" alt="">
+              <div class="game_title">초성 게임</div>
+              <div class="game_ex">돌아가며 낱말 잇기를 해봐요</div>
+            </div>
+          </a>
+          <a class="game2" href="{% url 'ant' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/catch.png" alt="">
+              <div class="game_title">개미 잡기</div>
+              <div class="game_ex">치매와 멀어지는 습관</div>
+            </div>
+          </a>
+          <a class="game3" href="{% url 'apple' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/drop.png" alt="">
+              <div class="game_title">떨어지는 사과를!</div>
+              <div class="game_ex">재빨리 주워보자</div>
+            </div>
+          </a>
+          <a class="game4" href="{% url 'space' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/space.png" alt="">
+              <div class="game_title">우주 게임</div>
+              <div class="game_ex">재빨리 주워보자</div>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="mySlides fade">
+          <!-- <a class="game1" href="{% url 'pin' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/word.png" alt="">
+              <div class="game_title">바늘 꽂기</div>
+              <div class="game_ex">이미지 안나옴</div>
+            </div>
+          </a> -->
+          <!-- <a class="game1" href="{% url 'connect' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/.png" alt="">
+              <div class="game_title">공으로 하는 오목</div>
+              <div class="game_ex">html 한줄때메 작동안됨</div>
+            </div>
+          </a> -->
+          
+          <!-- <a class="game3" href="{% url 'bejeweled' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/.png" alt="">
+              <div class="game_title">쥬얼리 게임</div>
+              <div class="game_ex">이미지 안나옴</div>
+            </div>
+          </a> -->
+          <!-- <a class="game4" href="{% url 'stick' %}">
+            <div class="game_number">
+              <img class="game_img" src="../static/img/column.png" alt="">
+              <div class="game_title">기둥을 건너라</div>
+              <div class="game_ex">꾹 눌러 다리를 만들어보세요</div>
+            </div>
+          </a> -->
+        </div> -->
+      </div>
+
+    </div>
+
+    <script>
+      var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+    </script>
+</body>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>숫자 맞추기</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'guess.css' %}">
+
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+    <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+    <style type="text/css" media="screen, print">
+          @font-face {
+          font-family: 'GongGothicMedium';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          }
+          body { font-family: "GongGothicMedium", serif }
+    </style>
+    
+  </head>
+  <body>
+    {% load static %}
+    <div class="header" style="background-color: #39BF94;z-index: 3; width:100%; padding: 20px 60px; 
+        color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+        <div class="header-title" style="width: 100%;display: flex; align-items: center;">
+            <a class="back_btn" style="width: 50px;
+            height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
+            font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+            <div class="main_title" style="font-size: 40px;
+            font-family: 'GongGothicMedium'; margin-bottom: 10px;">숫자 맞추기</div>
+        </div>
+
+        <a class="home_btn" style= "width: 100px;
+        height: 100px;
+        font-size: 40px;
+        text-align: center;
+        line-height: 115px;
+        margin-right: 100px;
+        color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+    </div>
+    <header>
+        <button class="again-btn">Again!</button>
+        <p class="range">&lt1과 20 사이의 숫자 하나를 골라주세요&gt</A></p>
+        <h1 class="title">숫자를 맞춰봐요!</h1>
+        <hr>
+        <div class="number">?</div>
+    </header>
+    <div class="stat">
+        <p class="message">메시지</p>
+        <span class="score">점수: 20</span></br>
+        <span class="record">최고 점수:</span></br>
+        <input class="guess-number"type="text"></br>
+        <button class="check-btn">확인!</button>
+    </div>
+
+    <script src="{% static 'guess.js' %}"></script>
+  </body>
+
+  {% endblock %}

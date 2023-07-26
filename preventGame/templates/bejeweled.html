@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <title>쥬얼리 게임</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'bejeweled_images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'bejeweled_css/screen.css' %}">
+    <link rel="stylesheet" href="{% static 'bejeweled_css/game.css' %}">
+
+    <!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+	<!-- 폰트 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+	<style type="text/css" media="screen, print">
+				@font-face {
+				font-family: 'GongGothicMedium';
+				src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				}
+				body { font-family: "GongGothicMedium", serif }
+	</style>
+    
+</head>
+
+<body>
+	{% load static %}
+	<div id="content">
+		<header>
+			<nav>
+				<a href="index.html">Home</a>
+			</nav>
+		</header>
+		<div id="game_content">
+			<div id="player_info">
+				<div id="time_gauge"><div id="current_gauge"></div></div>
+				<p id="level_text">Level</p><div id="level">1</div>
+				<p>Score</p><div id="total_score"><span id="current_score">0</span><br/>/<span id="goal_score">5000</span></div>
+				<button id="restart_bt">Restart</button>
+				<button id="pause_bt">Pause</button>
+			</div>
+			<div id="grid"></div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="{% static 'bejeweled_js/util.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/capabilities/item.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/init.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/timer.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/level.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/hint.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/score.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/streak.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/bonus.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/classes/Gem.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/classes/Bomb.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/classes/Popup.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bejeweled_js/game/main.js' %}"></script>
+
+</body>
+
+{% endblock %}

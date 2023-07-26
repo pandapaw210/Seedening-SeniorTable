@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <title>공으로 하는 오목</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'connect.css' %}">
+
+    <!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+	<!-- 폰트 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+	<style type="text/css" media="screen, print">
+				@font-face {
+				font-family: 'GongGothicMedium';
+				src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				}
+				body { font-family: "GongGothicMedium", serif }
+	</style>
+    
+</head>
+
+<body ng-controller="snakeCtrl">
+    {% load static %}
+	<h1>Connect the Color Game</h1>
+    <div id="gameContainer">
+      <div>
+          <div class="column" ng-repeat="column in board" ng-click="placeToken($index)">
+              <div ng-style="setStyling(val)" class="circle" ng-repeat="val in column track by $index">&nbsp</div>
+          </div>
+      </div>
+    </div>
+    <div id="startGame" ng-click="newGame()">New Game</div>
+ 
+    <script src="{% static 'angular.min.js' %}"></script>
+    <script src="{% static 'connect.js' %}"></script>
+</body>
+
+{% endblock %}

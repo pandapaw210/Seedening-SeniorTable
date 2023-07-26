@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background: black;
+}
+
+canvas {
+  background: #111;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+} 
+
+#startgameBtn {
+  font-size: 40px;
+}
+
+#score {
+  font-size: 40px;
+  margin: 80px;
+}

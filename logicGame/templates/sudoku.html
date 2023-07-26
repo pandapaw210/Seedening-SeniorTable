@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>스도쿠</title>
+  <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/5251502df3.js" crossorigin="anonymous"></script>
+  <link
+        href="https://fonts.googleapis.com/css2?family=Recursive&family=Red+Rose&family=Sriracha&family=Ubuntu&family=Poppins&family=Raleway&display=swap"
+        rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="{% static 'sudoku/style.css' %}">
+
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" rel="stylesheet">
+        <style type="text/css" media="screen, print">
+                @font-face {
+                font-family: 'GongGothicMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                }
+                body { font-family: "GongGothicMedium", serif }
+        </style>
+</head>
+
+<body class="flex-row">
+  {% load static %}
+<!-- partial:index.partial.html -->
+  <div class="header" style="background-color: #39BF94; position:absolute; z-index: 3; width:100%; padding: 20px 60px; margin-top: -960px;
+  color: #fff; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid black;">
+    <div class="header-title" style="width: 100%;display: flex; align-items: center;">
+      <a class="back_btn" style="width: 50px;
+      height: 50px; display: block; font-size: 30px; line-height: 50px; margin-right: 20px; color: #fff;
+      font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-bottom: 10px; " href="../"><i class="fa-solid fa-arrow-left"></i></a>
+      <div class="main_title" style="font-size: 40px;
+      font-family: 'GongGothicMedium'; margin-bottom: 10px;">스도쿠</div>
+    </div>
+
+    <a class="home_btn" style= "width: 100px;
+    height: 100px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 115px;
+    color: white;" href="/"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+
+
+    <div id="main__container">
+        <div id="header__controls" class="flex-row">
+            <span id="header__menu"><img src="{% static 'sudoku/images/3dots.svg' %}" id="dotMenuSpan" ></span>
+            <Span id="header__header"></Span>
+            <span id="header__submit"><span>완성!</span ></span>
+        </div>
+        <div id="dotMenu">
+            <div id="back" class="flex-row" style="justify-content: space-evenly;"><img src="{% static 'sudoku/images/home.svg' %}" alt=""> 처음으로</div>
+            <div id="newGame">새 게임</div>
+            <div id="clear">모두 지우기</div>
+            <div id="solver"> <span id="text"></span>
+                <div id="solverMenu">
+                    <div id="solverStart">시작</div>
+                    <div id="solverWatch"> 
+                        <input type="checkbox" id="solverWatchCbox" name="solverWatchCbox" value="watch" checked>
+                        <label for="solverWatchCbox">감상하기</label>
+                    </div>
+                    <div id="solverSpeed">
+                        <label for="speedRange">속도</label>
+                        <input type="range" name="speedRange" id="speedRange" max="250" min="50" value="100">
+                    </div>
+                    <div id="solverStop">멈추기</div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- board -->
+        <div id="board">
+
+        </div>
+        <div id="keypad" class="flex-row">
+        </div>
+
+    </div>
+
+    <!-- home page with menu options -->
+    <div id="home">
+        <div id="header">
+            <div id="title">스도쿠</div>
+
+            <div id="selection__size" class="selection flex-row">
+                <span class="title">크기</span>
+                <div class="options flex-row">
+                    <span data-size="4"><svg width="24" height="24" viewBox="0 0 1792 1792"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path
+                                d="M832 1024v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90zm0-768v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90zm896 768v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90zm0-768v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90z" />
+                            </svg></span>
+                    <span data-size="9"><svg width="24" height="24" viewBox="0 0 1792 1792"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path
+                                d="M512 1248v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm-640-1024v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm-640-1024v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68z" />
+                            </svg></span>
+                </div>
+            </div>
+
+            <div id="selection__level" class="selection flex-row">
+                <span class="title">난이도</span>
+                <div class="options">
+                    <Span data-level=0>쉬움</Span>
+                    <Span data-level=1>보통</Span>
+                    <Span data-level=2>사악함</Span>
+                </div>
+            </div>
+            <div id="start">시작</div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'sudoku/global.js' %}"></script>
+    <script src="{% static 'sudoku/combinations.js' %}"></script>
+    <script src="{% static 'sudoku/validate.js' %}"></script>
+    <script src="{% static 'sudoku/board.js' %}"></script>
+    <script src="{% static 'sudoku/view.js' %}"></script>
+    <script src="{% static 'sudoku/digger.js' %}"></script>
+    <script src="{% static 'sudoku/userActions.js' %}"></script>
+    <script src="{% static 'sudoku/solver.js' %}"></script>
+    <script src="{% static 'sudoku/script.js' %}"></script>
+
+
+</body>
+
+{% endblock %}

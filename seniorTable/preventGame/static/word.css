@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #stage {
+    margin: 0 auto;
+    width: 180px;
+    padding: 0 0 40px;
+  }
+  
+  .perspective-on {
+    -webkit-perspective: 1000px;
+       -moz-perspective: 1000px;
+            perspective: 1000px;    /* Setting the perspective of the contents of the stage but not the stage itself*/
+  }
+  .perspective-off {
+    -webkit-perspective: 0;
+       -moz-perspective: 0;
+            perspective: 0;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+ }
+  #rotate {
+    margin: 0 auto 0;
+    width: 450px;
+    height: 220px;
+    padding-top: 200px;
+    /* Ensure that we're in 3D space */
+    transform-style: preserve-3d;
+  }
+  
+  .ring {
+    margin: 0 auto;
+    height: 80px;
+    width: 90px;
+    float: left;
+    transform-style: preserve-3d;
+  }
+
+  .slot {
+    position: absolute;
+    width: 90px;
+    height: 80px;
+    box-sizing: border-box;
+    opacity: 0.9;
+    color: rgba(0,0,0,0.9);
+    background: #fff;
+    border: solid 2px #000;
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  
+  .backface-on {
+    -webkit-backface-visibility: visible;
+       -moz-backface-visibility: visible;
+            backface-visibility: visible;
+  }
+  
+  .slot p {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 80px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .go {
+    display: block;
+    margin: 0 auto;
+    padding:30px 50px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  label {
+    cursor: pointer;
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+  }
+  .tilted {
+    transform: rotateY(45deg);
+  }
+  /*=====*/
+  .spin-0     { transform: rotateX(-3705deg); }
+  .spin-1     { transform: rotateX(-3730.7deg); }
+  .spin-2     { transform: rotateX(-3756.4deg); }
+  .spin-3     { transform: rotateX(-3782.1deg); }
+  .spin-4     { transform: rotateX(-3807.8deg); }
+  .spin-5     { transform: rotateX(-3833.5deg); }
+  .spin-6     { transform: rotateX(-3859.2deg); }
+  .spin-7     { transform: rotateX(-3884.9deg); }
+  .spin-8     { transform: rotateX(-3910.6deg); }
+  .spin-9     { transform: rotateX(-3936.3deg); }
+  .spin-10    { transform: rotateX(-3962deg); }
+  .spin-11    { transform: rotateX(-3987.7deg); }
+  .spin-12    { transform: rotateX(-4013.4deg); }
+  .spin-13    { transform: rotateX(-4039.1deg); }
+  /*=====*/
+  @keyframes back-spin {
+      /*0%    { transform: rotateX(0deg); }*/
+      100%  { transform: rotateX(25.7deg); }
+  }
+  @keyframes tiltin {
+      0%    { transform: rotateY(0deg);}
+      50%   { transform: rotateY(0deg);}
+      100%  { transform: rotateY(45deg);}
+  }
+  @keyframes tiltout {
+      0%    { transform: rotateY(45deg);}
+      100%  { transform: rotateY(0deg);}
+  }
+  
+  @keyframes spin-0 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3705deg); }
+  }
+  @keyframes spin-1 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3730.7deg); }
+  }
+  @keyframes spin-2 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3756.4deg); }
+  }
+  @keyframes spin-3 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3782.1deg); }
+  }
+  @keyframes spin-4 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3807.8deg); }
+  }
+  @keyframes spin-5 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3833.5deg); }
+  }
+  @keyframes spin-6 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3859.2deg); }
+  }
+  @keyframes spin-7 {
+      0%    { transform: rotateX(30deg); }
+      100%  { transform: rotateX(-3884.9deg); }
+  }
+  @keyframes spin-8 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3910.6deg); }
+  }
+  @keyframes spin-9 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3936.3deg); }
+  }
+  @keyframes spin-10 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3962deg); }
+  }
+  @keyframes spin-11 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-3987.7deg); }
+  }
+  @keyframes spin-12 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-4013.4deg); }
+  }
+  @keyframes spin-13 {
+      0%    { transform: rotateX(25.7deg); }
+      100%  { transform: rotateX(-4039.1deg); }
+  }

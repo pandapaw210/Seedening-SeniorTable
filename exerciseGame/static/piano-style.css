@@ -1,0 +1,216 @@
+@import url('piano-reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Noto+Sans+KR&display=swap'); 
+
+/* removed default margin and padding from every element */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* --speed: transform 1600s linear; */
+}
+
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	background-color: #FFFCF4;
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* top */
+.top {
+	margin: 60px 60px;
+	display: flex;
+	justify-content: space-between;
+	height: 125px;
+	width: auto;
+  }
+  
+  .head_title {
+	font-size: 60px;
+	font-family: 'Gugi', cursive;
+  }
+  
+  .head_title::first-letter{
+	content: '';
+	color: #FFD26C;
+	font-size: 65px;
+  }
+  
+  .sub_title {
+	font-size: 30px;
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height: 40px;
+	margin-top: 10px;
+  
+  }
+  .back_btn {
+	display: block;
+	width: 100px;
+	height: 100px;
+	font-size: 50px;
+	text-align: center;
+	line-height: 90px;
+	color: black;
+	opacity: 0.5;
+  }
+  
+  .back_btn:hover {
+	opacity: 1;
+	transition: 1s;
+  }
+
+/* canvas */
+.canvas {
+	background-color: white;
+	position: fixed;
+	z-index: 0;
+	left: 50%;
+	transform: translate(-50%, calc(-300200px + 100vh));
+	width: 100vw;
+	max-width: 500px;
+	outline: 3px solid black;
+}
+
+.speed {
+	transform: translateY(0);
+	transition: transform linear 1000s;
+}
+
+.speed-1x {
+	transform: translateY(0);
+	transition: transform linear 1000s;
+}
+
+.speed-2x {
+	transform: translateY(0);
+	transition: transform linear 800s;
+}
+
+.speed-3x {
+	transform: translateY(0);
+	transition: transform linear 700s;
+}
+
+.speed-4x {
+	transform: translateY(0);
+	transition: transform linear 500s;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.rows {
+	height: 150px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	background-color: rgb(62, 199, 237);
+}
+
+.rows-start {
+	height: 100px;
+}
+
+.white-tiles {
+	border: 1px solid whitesmoke;
+	background-color: white;
+}
+
+.black-tile {
+	background-color: black;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.score {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	z-index: 100;
+	display: flex;
+	left: 82%;
+	transform: translateX(-50%);
+	min-width: max-content;
+	border: 3px solid black;
+	border-radius: 15px;
+	padding: 10px;
+	background-color: #fff;
+	margin-top: 200px;
+}
+
+.score p:first-child {
+	padding: 0.7rem;
+	font-weight: bolder;
+	font-size: 50px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.score p:last-child {
+	margin-top: 10px;
+	padding: 0.7rem;
+	font-size: 30px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* gameover */
+
+.container {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+}
+
+.gameOver {
+	display: none;
+	padding-top: 41vh;
+	position: absolute;
+	z-index: 10;
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.431);
+	color: rgb(255, 255, 255);
+	font-weight: bolder;
+	font-size: xx-large;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.gameOver p {
+	display: flex;
+	font-size: 30px;
+	justify-content: center;
+	align-items: center;
+	color: rgb(255, 255, 255);
+}
+
+.gameOver p:first-child {
+	margin-top: -100px;
+	margin-bottom: 50px;
+	font-size: 50px;
+	color: #FFD26C;
+}
+
+.gameOver p:nth-child(3) {
+	margin-top: 20px;
+}
+
+#restart {
+	font-size: 35px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bolder;
+	color: rgb(255, 255, 255);
+	background-color: transparent;
+	border: none;
+	margin-top: 40px;
+	color: #FFD26C;
+}
