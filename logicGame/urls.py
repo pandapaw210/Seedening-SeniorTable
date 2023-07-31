@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from . import url
 
 
 urlpatterns = [
@@ -13,6 +12,10 @@ urlpatterns = [
 	path('binairo/', views.binairo, name='binairo'),
    	path('sudoku/', views.sudoku, name='sudoku'),
     	path('square/', views.square, name='square'),
+
+	path('dots/', views.dots, name='dots'),
+    	path('freecell/', views.freecell, name='freecell'),
+   	path('hanoi/', views.hanoi, name='hanoi'),
    
 ]
 
